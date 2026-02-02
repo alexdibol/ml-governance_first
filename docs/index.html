@@ -253,11 +253,133 @@
       border-radius:8px;
       border:1px solid rgba(255,255,255,0.10);
     }
+
+    /* --- Added: small header nav + buttons + accessibility helpers --- */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:240px;
+    }
+    .logo{
+      width:36px;height:36px;border-radius:12px;
+      background:linear-gradient(135deg, rgba(122,162,255,0.85), rgba(110,231,200,0.75));
+      box-shadow:0 10px 24px rgba(0,0,0,0.35);
+      border:1px solid rgba(255,255,255,0.14);
+    }
+    .brand div{line-height:1.2;}
+    .brand .title{
+      font-size:12px;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      color:var(--muted);
+      font-weight:900;
+    }
+    .brand .sub{
+      font-size:12px;
+      color:var(--muted);
+      opacity:0.95;
+    }
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:flex-end;
+    }
+    .nav a{
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.10);
+      background:rgba(0,0,0,0.14);
+      color:var(--muted);
+    }
+    .nav a:hover{
+      background:rgba(0,0,0,0.22);
+      border-color: rgba(122,162,255,0.35);
+      text-decoration:none;
+      color:var(--text);
+    }
+
+    .btnrow{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(0,0,0,0.18);
+      color:var(--text);
+      font-weight:900;
+      letter-spacing:0.04em;
+      font-size:12px;
+      text-transform:uppercase;
+      transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background:rgba(0,0,0,0.26);
+      border-color: rgba(110,231,200,0.40);
+      text-decoration:none;
+      color:var(--text);
+    }
+    .btn.secondary{
+      color:var(--muted);
+      border-color: rgba(122,162,255,0.20);
+    }
+    .btn.secondary:hover{
+      border-color: rgba(122,162,255,0.45);
+    }
+    .sr-only{
+      position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+    }
+    .divider{
+      margin-top:22px;
+      border:0;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width:720px){
+      .hero{padding:28px 20px;}
+      .hero h1{font-size:30px;}
+      .topbar{flex-direction:column;align-items:flex-start;}
+      .nav{justify-content:flex-start;}
+    }
   </style>
 </head>
 
 <body>
   <main class="container">
+
+    <!-- Added: Top bar navigation -->
+    <header class="topbar" aria-label="Repository navigation">
+      <div class="brand" aria-label="Governance-First collection brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">Governance-First</div>
+          <div class="sub">Book 1 · Governed Machine Learning</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Jump links">
+        <a href="#downloads">Download</a>
+        <a href="#notebooks">Notebooks</a>
+        <a href="#collection">Collection</a>
+        <a href="#evaluations">Evaluation</a>
+        <a href="#disclaimer">Disclaimers</a>
+      </nav>
+    </header>
 
     <section class="hero">
       <div class="kicker">Book · Governance-first machine learning · discipline before capability · PDF + Colab notebooks (Chapters 1–5)</div>
@@ -284,6 +406,20 @@
         <span class="badge">Author = Instructor</span>
         <span class="badge">PDF + Colab</span>
       </div>
+
+      <!-- Added: Quick action buttons -->
+      <div class="btnrow" aria-label="Quick actions">
+        <a class="btn" href="#downloads">Get the PDF</a>
+        <a class="btn" href="#notebooks">Run the Notebooks</a>
+        <a class="btn secondary" href="#disclaimer">Read Disclaimers</a>
+      </div>
+
+      <hr class="divider" />
+
+      <p class="mini">
+        <strong>Repository convention:</strong> this page is a governed entry point (what it is, what it is not, what artifacts exist).<br/>
+        <span>Everything is designed to be reviewable: outputs are labeled <em>Not verified</em>, and “evidence bundles” are first-class artifacts.</span>
+      </p>
     </section>
 
     <section class="section" id="downloads">
@@ -474,4 +610,41 @@
       </p>
 
       <p class="small">
-        <strong>Use of generative AI tools (transparency):</strong> Generative AI tools may have been used to
+        <strong>Use of generative AI tools (transparency):</strong> Generative AI tools may have been used to draft or edit portions of this repository.
+        Any such content remains <em>Not verified</em> until independently reviewed. Where feasible, the notebooks and chapter templates include:
+        scope statements, assumptions logs, risk logs, and run manifests to support reviewability.
+      </p>
+
+      <p class="small">
+        <strong>License:</strong> Unless otherwise stated in the repository, this work is released under the repository’s license file.
+        If you are adopting this material in an institutional context, ensure your usage complies with internal policy and licensing requirements.
+      </p>
+
+      <div class="callout">
+        <strong>Minimum institutional standard (recommended):</strong> If you use any notebook outputs outside the classroom,
+        attach the generated evidence bundle and require a named human reviewer to sign off on (i) scope, (ii) data provenance,
+        (iii) assumptions, (iv) risks, and (v) intended use.
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <strong>Governed Machine Learning</strong> · Governance-First ML & AI Collection · Book 1
+      </div>
+      <div style="margin-top:8px;">
+        Built for high-accountability teams: evidence &gt; eloquence · controls &gt; vibes · review gates &gt; autopilot
+      </div>
+      <div style="margin-top:12px;">
+        <a href="#downloads">Download</a> ·
+        <a href="#notebooks">Notebooks</a> ·
+        <a href="#collection">Collection</a> ·
+        <a href="#disclaimer">Disclaimers</a>
+      </div>
+      <div style="margin-top:12px; opacity:0.9;">
+        <span class="mini">Status: <code>Not verified</code> · This page is an educational repository entry point, not an institutional certification.</span>
+      </div>
+    </footer>
+
+  </main>
+</body>
+</html>
