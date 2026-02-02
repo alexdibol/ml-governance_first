@@ -237,6 +237,22 @@
       letter-spacing:0.05em;
       text-transform:uppercase;
     }
+    .mini{
+      font-size:12px;
+      color:var(--muted);
+      opacity:0.95;
+      margin-top:10px;
+      max-width:110ch;
+    }
+    .mini code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size:12px;
+      color:var(--text);
+      background: rgba(0,0,0,0.22);
+      padding:2px 6px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.10);
+    }
   </style>
 </head>
 
@@ -250,11 +266,10 @@
 
       <p class="subtitle">
         This is the <strong>first book</strong> in a <strong>seven-book Governance-First ML & AI collection</strong>.
-        It installs the <em>discipline</em> that makes the rest of the ladder possible: evidentiary rigor, scope control,
-        reproducibility, and human accountability. The target audience is <strong>C-level practitioners</strong>, <strong>MBA students</strong>,
-        <strong>Master of Finance students</strong>, and professional teams operating in <strong>high-accountability environments</strong>.
-        The objective is to move AI from “interesting gadget” to <strong>durable productivity tool</strong> by teaching
-        the governance behaviors that survive supervision, review, and institutional scrutiny.
+        It installs the discipline that makes the rest of the ladder possible: scope control, evidentiary rigor, reproducibility,
+        and human accountability. Built for <strong>C-level practitioners</strong>, <strong>MBA students</strong>, and <strong>Master of Finance</strong>
+        cohorts in high-accountability environments, the course focuses on what it takes to turn AI from an “interesting gadget” into a
+        <strong>powerful productivity tool</strong>—without collapsing governance, compliance, or professional responsibility.
       </p>
 
       <div class="pillrow" aria-label="Governance priorities">
@@ -266,74 +281,93 @@
       <div class="pillrow" style="margin-top:14px;" aria-label="Collection position">
         <span class="badge">Collection: 7 Books</span>
         <span class="badge">This Volume: Book 1</span>
-        <span class="badge">Stops Short of Generative AI</span>
+        <span class="badge">Author = Instructor</span>
+        <span class="badge">PDF + Colab</span>
       </div>
     </section>
 
     <section class="section" id="downloads">
       <h2>Download and Run</h2>
       <p>
-        The book PDF is available in the repository <strong>book</strong> folder. The companion notebooks live in this repository and open directly in Google Colab.
+        The PDF lives in the repository <strong>book</strong> folder. The companion notebooks live in <strong>notebooks</strong>
+        and can be run either from GitHub or directly in Google Colab.
       </p>
 
       <div class="grid">
-        <!-- TODO: replace these URLs with your actual repository paths -->
-        <a class="card linkcard" href="https://github.com/alexdibol/REPLACE_WITH_BOOK_1_REPO/tree/main/book" target="_blank" rel="noopener">
-          <h3>Book (PDF)</h3>
-          <p>Browse the book folder containing the current PDF edition.</p>
-          <div class="hint">Open book folder →</div>
+        <a class="card linkcard"
+           href="https://github.com/alexdibol/ml-governance_first/blob/main/book/GOVERNED%20MACHINE%20LEARNING.pdf"
+           target="_blank" rel="noopener">
+          <h3>Book 1 (PDF)</h3>
+          <p>Open the current PDF edition of <em>Governed Machine Learning: A Foundation Before Generative AI</em>.</p>
+          <div class="hint">Open PDF →</div>
         </a>
 
-        <a class="card linkcard" href="https://github.com/alexdibol/REPLACE_WITH_BOOK_1_REPO/tree/main/notebooks" target="_blank" rel="noopener">
+        <a class="card linkcard"
+           href="https://github.com/alexdibol/ml-governance_first/tree/main/notebooks"
+           target="_blank" rel="noopener">
           <h3>Notebooks Folder</h3>
-          <p>Browse all chapter notebooks in the repository (chapter_1 … chapter_5).</p>
+          <p>Browse all chapter notebooks in the repository (CHAPTER_1 … CHAPTER_5).</p>
           <div class="hint">Open folder →</div>
         </a>
       </div>
 
+      <div class="mini">
+        Reference paths (for consistency):<br/>
+        <code>/book/GOVERNED%20MACHINE%20LEARNING.pdf</code> · <code>/notebooks/CHAPTER_1.ipynb</code>
+      </div>
+
       <div class="callout">
-        <strong>Governance-first promise:</strong> This volume does not teach “AI magic.” It teaches <em>institutional discipline</em>.
-        Every model exercise is framed as: define scope → log assumptions → produce auditable artifacts → separate facts from narrative →
-        require human review. If the evidence is missing, the correct output is a verification plan—not a confident story.
+        <strong>Governance-first promise:</strong> This book does not train “model confidence.” It trains institutional discipline.
+        Every chapter reinforces: define scope → log assumptions → generate audit artifacts → separate facts from narrative → require human review.
+        If evidence is missing, the correct output is a verification plan—not a persuasive story.
       </div>
     </section>
 
     <section class="section" id="notebooks">
       <h2>Chapter Notebooks (Colab)</h2>
       <p>
-        Each notebook is executable, auditable, and classroom-ready. Labs are intentionally designed to be <strong>governance demonstrators</strong>:
-        they produce structured outputs and run artifacts (manifest + risk log + deliverables bundle) so results are reviewable rather than ephemeral.
+        Each notebook is executable, auditable, and classroom-ready. Labs produce structured outputs and governance artifacts
+        (run manifest, prompts log, risk log, deliverables bundle) so results are reviewable rather than ephemeral.
       </p>
 
       <div class="grid">
-        <!-- TODO: replace REPLACE_WITH_BOOK_1_REPO with your actual repo name -->
-        <a class="card linkcard" href="https://colab.research.google.com/github/alexdibol/REPLACE_WITH_BOOK_1_REPO/blob/main/notebooks/chapter_1.ipynb" target="_blank" rel="noopener">
+        <a class="card linkcard"
+           href="https://colab.research.google.com/github/alexdibol/ml-governance_first/blob/main/notebooks/CHAPTER_1.ipynb"
+           target="_blank" rel="noopener">
           <h3>Chapter 1 — Unsupervised Learning: Pattern Without Intention</h3>
-          <p>K-Means + hierarchical clustering as the true starting point: structure discovery, not decisions. Governance of interpretation.</p>
+          <p>Start where institutional risk starts: structure discovery, not decisions. Governance of interpretation and narrative restraint.</p>
           <div class="hint">Open in Colab →</div>
         </a>
 
-        <a class="card linkcard" href="https://colab.research.google.com/github/alexdibol/REPLACE_WITH_BOOK_1_REPO/blob/main/notebooks/chapter_2.ipynb" target="_blank" rel="noopener">
-          <h3>Chapter 2 — Supervised Classification: Labels, Risk, and Accountability</h3>
-          <p>Classification under governance: leakage controls, evaluation discipline, false-positive/false-negative framing, human sign-off.</p>
+        <a class="card linkcard"
+           href="https://colab.research.google.com/github/alexdibol/ml-governance_first/blob/main/notebooks/CHAPTER_2.ipynb"
+           target="_blank" rel="noopener">
+          <h3>Chapter 2 — Supervised Classification: Labels, Risk, Accountability</h3>
+          <p>Classification under governance: leakage controls, evaluation discipline, error costs, and human sign-off.</p>
           <div class="hint">Open in Colab →</div>
         </a>
 
-        <a class="card linkcard" href="https://colab.research.google.com/github/alexdibol/REPLACE_WITH_BOOK_1_REPO/blob/main/notebooks/chapter_3.ipynb" target="_blank" rel="noopener">
+        <a class="card linkcard"
+           href="https://colab.research.google.com/github/alexdibol/ml-governance_first/blob/main/notebooks/CHAPTER_3.ipynb"
+           target="_blank" rel="noopener">
           <h3>Chapter 3 — Adversarial Models: Fragility Under Pressure</h3>
           <p>Adversarial settings as governance stress tests: robustness, boundary behavior, and “what breaks first” evidence capture.</p>
           <div class="hint">Open in Colab →</div>
         </a>
 
-        <a class="card linkcard" href="https://colab.research.google.com/github/alexdibol/REPLACE_WITH_BOOK_1_REPO/blob/main/notebooks/chapter_4.ipynb" target="_blank" rel="noopener">
-          <h3>Chapter 4 — Graph Models: Relations, Diffusion, and Misinterpretation Risk</h3>
-          <p>Graph learning with governance: relationship inference hazards, proxy risk, and controlled narratives about connectivity.</p>
+        <a class="card linkcard"
+           href="https://colab.research.google.com/github/alexdibol/ml-governance_first/blob/main/notebooks/CHAPTER_4.ipynb"
+           target="_blank" rel="noopener">
+          <h3>Chapter 4 — Graph Models: Relations and Misinterpretation Risk</h3>
+          <p>Graph learning with governance: relationship inference hazards, proxy risk, and controlled claims about connectivity.</p>
           <div class="hint">Open in Colab →</div>
         </a>
 
-        <a class="card linkcard" href="https://colab.research.google.com/github/alexdibol/REPLACE_WITH_BOOK_1_REPO/blob/main/notebooks/chapter_5.ipynb" target="_blank" rel="noopener">
-          <h3>Chapter 5 — Optimization & Evolutionary Methods: Objective Power, Objective Risk</h3>
-          <p>Optimization + genetic/evolutionary methods as the governance climax: objective definition, constraint design, and audit-ready runs.</p>
+        <a class="card linkcard"
+           href="https://colab.research.google.com/github/alexdibol/ml-governance_first/blob/main/notebooks/CHAPTER_5.ipynb"
+           target="_blank" rel="noopener">
+          <h3>Chapter 5 — Optimization & Evolution: Objective Power, Objective Risk</h3>
+          <p>Optimization + genetic/evolutionary methods as the climax: objective definition, constraint design, and audit-ready runs.</p>
           <div class="hint">Open in Colab →</div>
         </a>
       </div>
@@ -347,8 +381,8 @@
     <section class="section" id="collection">
       <h2>The Seven-Book Governance-First ML & AI Collection</h2>
       <p>
-        This book is designed as the foundation that makes the rest of the ladder coherent. The collection progresses from
-        disciplined machine learning to governed generative and agentic capability—always pairing capability growth with risk growth and controls.
+        This volume is designed as the foundation that makes the rest of the ladder coherent. The collection progresses from disciplined machine learning
+        into governed generative and agentic capability—always pairing capability growth with risk growth and control design.
       </p>
 
       <ul class="list">
@@ -362,25 +396,9 @@
       </ul>
 
       <div class="callout">
-        <strong>Where this goes next:</strong> the ladder continues from classic ML into generative chatbots, reasoners, agentic systems,
+        <strong>Where this goes next:</strong> the ladder continues into governed generative chatbots, reasoners, agentic systems,
         innovation workflows, and autonomous organizational capability—but only after governance discipline becomes default behavior here.
       </div>
-    </section>
-
-    <section class="section" id="ladder">
-      <h2>Five-Chapter Discipline Ladder (This Volume)</h2>
-      <p>
-        This book builds governed competence by escalating the kinds of mistakes institutions make as models become more powerful:
-        interpretation drift → label risk → adversarial fragility → relational inference hazards → objective misuse.
-      </p>
-
-      <ul class="list">
-        <li><strong>Chapter 1 — Unsupervised:</strong> pattern discovery without institutional meaning; governance of interpretation and narrative restraint.</li>
-        <li><strong>Chapter 2 — Supervised Classification:</strong> labels as responsibility; evaluation discipline, leakage controls, and error accountability.</li>
-        <li><strong>Chapter 3 — Adversarial Models:</strong> robustness as governance; stress tests, boundary behavior, and evidence capture under pressure.</li>
-        <li><strong>Chapter 4 — Graph Models:</strong> relational inference risk; proxy pathways, diffusion narratives, and controlled claims.</li>
-        <li><strong>Chapter 5 — Optimization & Evolution:</strong> objective design as institutional power; constraints, auditability, and reproducible runs.</li>
-      </ul>
     </section>
 
     <section class="section" id="evaluations">
@@ -456,27 +474,4 @@
       </p>
 
       <p class="small">
-        <strong>Use of generative AI tools (transparency):</strong> Generative AI tools may have been used to assist in drafting, editing, formatting,
-        or code generation during the development of this book and its companion notebooks. However, conceptual design, pedagogical structure,
-        governance logic, integration decisions, and final editorial judgment were human-led, human-supervised, and human-approved at all times.
-        The author assumes full responsibility for the content, structure, and conclusions of this work.
-      </p>
-
-      <p class="small">
-        <strong>Repository license:</strong> See the repository’s LICENSE file for terms.
-      </p>
-    </section>
-
-    <footer class="footer">
-      © <span id="year"></span> Alejandro Reynoso · Governed Machine Learning: A Foundation Before Generative AI (Governance-First)
-      <br/>Author = Instructor · Hosted on GitHub Pages · Built as governed, executable courseware (Book 1 of 7)
-    </footer>
-
-  </main>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
-
+        <strong>Use of generative AI tools (transparency):</strong> Generative AI tools may have been used to
